@@ -21,3 +21,20 @@ questions = [
     }
 ]
 
+def run_quize(questions):
+  score = 0
+  for question in questions:
+    print(question["prompt"])
+    for option in question["options"]:
+      print(option)
+    answer = input("Enter your Answer for (A, B, C, D): ").upper()
+    if answer == question["answer"]:
+      print("Correct, Hoorayyy!!\n")
+      score += 1
+    else:
+      print("Wrong, Loser!, the correct answer was ", question["answer"], "\n")
+
+  print(f"you got {score} out of {len(questions)} questions correct.")
+
+
+run_quize(questions)
